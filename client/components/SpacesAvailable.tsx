@@ -4,13 +4,14 @@ import { SpacesAvailableProps } from "@/lib/types";
 import RoomCard from "./RoomCard";
 
 const SpacesAvailable: React.FC<SpacesAvailableProps> = ({ selectedTags, rooms, searchTerm }) => {
-    // Filter rooms based on selected tags and search term
+
     const filteredRooms = rooms.filter(room => {
-        // Check if room has any of the selected tags
+
         const hasSelectedTags = selectedTags.length === 0 || 
-            room.tags.some(tag => selectedTags.includes(tag.tag));
+            selectedTags.every(selectedTag => 
+                room.tags.some(tag => tag.tag === selectedTag)
+            );
         
-        // Check if room matches search term
         const matchesSearch = searchTerm === '' || 
             room.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             room.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -20,7 +21,6 @@ const SpacesAvailable: React.FC<SpacesAvailableProps> = ({ selectedTags, rooms, 
 
     const handleTagClick = (tag: string) => {
         console.log('Tag clicked:', tag);
-        // You can add filtering logic here if needed
     };
 
     return (
