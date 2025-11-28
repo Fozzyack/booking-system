@@ -1,13 +1,9 @@
 "use client";
 import { Search } from "lucide-react";
-import { SetStateAction, useRef } from "react";
+import { SearchBarProps } from "@/lib/types";
+import { useRef } from "react";
 
-interface SearchInput {
-    search: string;
-    setSearch: React.Dispatch<SetStateAction<string>>;
-}
-
-const SearchBar: React.FC<SearchInput> = ({ search, setSearch }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ value, onChange }) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleClick = () => {
@@ -15,12 +11,12 @@ const SearchBar: React.FC<SearchInput> = ({ search, setSearch }) => {
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearch(e.target.value);
+        onChange(e.target.value);
     };
 
     const handleClear = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        setSearch("");
+        onChange("");
     };
 
     return (
@@ -35,7 +31,7 @@ const SearchBar: React.FC<SearchInput> = ({ search, setSearch }) => {
                     placeholder="Search..."
                     ref={inputRef}
                     onChange={handleChange}
-                    value={search}
+                    value={value}
                 />
             </div>
             <button onClick={handleClear} className="px-4 py-2 rounded-xl border border-slate-500 bg-secondary text-secondary-foreground hover:-translate-y-1/12 hover:bg-primary hover:text-primary-foreground transition-all duration-300">

@@ -1,28 +1,17 @@
 "use client";
-import { FILTER_LIST } from "@/utils/constants";
+import { AVAILABLE_TAGS } from "@/lib/constants";
 import { Filter, Check } from "lucide-react";
-import { SetStateAction } from "react";
+import { FilterSectionProps } from "@/lib/types";
 
-interface FilterProps {
-    filters: string[];
-    setFilters: React.Dispatch<SetStateAction<string[]>>;
-}
-
-const FilterSection: React.FC<FilterProps> = ({ filters, setFilters }) => {
+const FilterSection: React.FC<FilterSectionProps> = ({ selectedTags, onTagToggle }) => {
     const handleFilterSelect = (
         e: React.MouseEvent<HTMLButtonElement>,
         filter: string,
     ) => {
-        setFilters((prev) => {
-            e.preventDefault();
-            const isSelected = filters.includes(filter);
-            console.log(isSelected);
-            if (isSelected) {
-                return prev.filter((f) => f != filter);
-            }
-            return [...prev, filter];
-        });
+        e.preventDefault();
+        onTagToggle(filter);
     };
+    
     return (
         <div className="flex items-center gap-4 py-4 flex-wrap">
             <div className="flex items-center justify-center">
@@ -30,8 +19,8 @@ const FilterSection: React.FC<FilterProps> = ({ filters, setFilters }) => {
                 <p className="">Filter By:</p>
             </div>
             <div className="flex gap-2 flex-wrap">
-                {FILTER_LIST.map((filter, index) => {
-                    const isSelected = filters.includes(filter);
+                {AVAILABLE_TAGS.map((filter, index) => {
+                    const isSelected = selectedTags.includes(filter);
                     return (
                         <button
                             onClick={(e) => {
@@ -51,4 +40,5 @@ const FilterSection: React.FC<FilterProps> = ({ filters, setFilters }) => {
         </div>
     );
 };
+
 export default FilterSection;

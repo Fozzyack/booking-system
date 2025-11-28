@@ -2,13 +2,38 @@
 import Header from "@/components/Header";
 import SearchBar from "@/components/SearchBar";
 import FilterSection from "@/components/FilterSection";
-import { useState } from "react";
 import SpacesAvailable from "@/components/SpacesAvailable";
+
+import { Room } from "@/lib/types";
+import { API_BASE_URL, API_ENDPOINTS } from "@/lib/constants";
+import { useEffect, useState } from "react";
 
 export default function Home() {
     const [search, setSearch] = useState("");
     const [filters, setFilters] = useState<string[]>([]);
+    const [rooms, setRooms] = useState<Room[]>([]);
 
+    const handleTagToggle = (tag: string) => {
+        setFilters(prev => 
+            prev.includes(tag) 
+                ? prev.filter(f => f !== tag)
+                : [...prev, tag]
+        );
+    };
+
+    useEffect(() => {
+        const fetchRooms = async () => {
+            try {
+                const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.rooms}`);
+                const data = await response.json();
+                setRooms(data);
+            } catch (error) {
+                console.error('Error fetching rooms:', error);
+            }
+        };
+        
+        fetchRooms();
+    }, []);
     return (
         <div className="bg-slate-100 min-h-screen">
             <Header />
@@ -24,9 +49,9 @@ export default function Home() {
                         Access premium workspaces, studios and event halls
                         accross or areas. Instant booking, no contracts.
                     </p>
-                    <SearchBar search={search} setSearch={setSearch} />
-                    <FilterSection filters={filters} setFilters={setFilters} />
-                    <SpacesAvailable filters={filters}/>
+                    <SearchBar value={search} onChange={setSearch} />
+                    <FilterSection selectedTags={filters} onTagToggle={handleTagToggle} />
+                    <SpacesAvailable rooms={rooms} selectedTags={filters} searchTerm={search}/>
                 </div>
             </div>
         </div>
