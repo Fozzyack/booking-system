@@ -6,12 +6,13 @@ authors = [
     {name = "Frasier",email = "fsundra@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.13"
 dependencies = [
+    "django-stubs (>=5.2.7,<6.0.0)",
     "django (>=5.2.8,<6.0.0)",
     "djangorestframework (>=3.16.1,<4.0.0)",
-    "django-stubs (>=5.2.7,<6.0.0)",
     "pillow (>=12.0.0,<13.0.0)",
+    "cors (>=1.0.1,<2.0.0)",
     "django-cors-headers (>=4.9.0,<5.0.0)"
 ]
 

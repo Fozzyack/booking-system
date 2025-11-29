@@ -2,7 +2,17 @@
 
 import { RoomCardProps } from "@/lib/types";
 
+import { useState } from "react";
+import BookingModal from "./BookingModal";
+
 const RoomCard: React.FC<RoomCardProps> = ({ room, onTagClick }) => {
+    const [ modalOpen, setModalOpen] = useState<boolean>(false);
+
+    const handleToggleModal = (e: React.MouseEvent<HTMLButtonElement>, roomId: number) => {
+        e.preventDefault();
+        setModalOpen(prev => !prev);
+    }
+
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-0.5 hover:scale-105 transition-all ease-in-out flex flex-col">
             {room.image && (
@@ -31,10 +41,12 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, onTagClick }) => {
                         </span>
                     )}
                 </div>
-                <button className="bg-primary text-sm md:text-md flex items-center justify-center text-primary-foreground py-3 rounded-xl mt-auto w-full hover:bg-primary/90 transition-colors">
+                <button onClick={(e) => {handleToggleModal(e, room.id)}} className="bg-primary text-sm md:text-md flex items-center justify-center text-primary-foreground py-3 rounded-xl mt-auto w-full hover:bg-primary/90 transition-colors">
                     Book Now
                 </button>
             </div>
+            {modalOpen && <BookingModal />}
+
         </div>
     );
 };
