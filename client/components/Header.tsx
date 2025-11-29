@@ -22,13 +22,13 @@ export const Header: React.FC = () => {
 
     return (
         <header
-            className={`sticky right-0 top-0 bg-white z-50 transition-all duration-300 ${
+            className={`sticky md:px-32 lg:px-64 right-0 top-0 bg-white z-50 transition-all duration-300 w-full ${
                 isScrolled || isMobileMenuOpen
                     ? "bg-white/80 backdrop-blur-md shadow-sm"
                     : "bg-transparent"
             }`}
         >
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <div className="shrink-0 flex items-center gap-2">

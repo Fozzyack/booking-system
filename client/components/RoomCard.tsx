@@ -6,28 +6,29 @@ import { useState } from "react";
 import BookingModal from "./BookingModal";
 
 const RoomCard: React.FC<RoomCardProps> = ({ room, onTagClick }) => {
-    const [ modalOpen, setModalOpen] = useState<boolean>(false);
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
 
-    const handleToggleModal = (e: React.MouseEvent<HTMLButtonElement>, roomId: number) => {
-        e.preventDefault();
-        setModalOpen(prev => !prev);
-    }
+    const handleToggleModal = () => {
+        setModalOpen((prev) => !prev);
+    };
 
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-0.5 hover:scale-105 transition-all ease-in-out flex flex-col">
             {room.image && (
-                <img 
-                    src={room.image} 
+                <img
+                    src={room.image}
                     alt={room.name}
                     className="w-full h-48 object-cover"
                 />
             )}
             <div className="p-4 flex flex-col grow">
-                <h4 className="text-lg font-semibold text-primary">{room.name}</h4>
+                <h4 className="text-lg font-semibold text-primary">
+                    {room.name}
+                </h4>
                 <p className="text-sm text-gray-600 mt-1">{room.description}</p>
                 <div className="flex flex-wrap gap-2 my-3">
-                    {room.tags.slice(0, 3).map(tag => (
-                        <span 
+                    {room.tags.slice(0, 3).map((tag) => (
+                        <span
                             key={tag.id}
                             className="px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded-full cursor-pointer hover:bg-secondary/80"
                             onClick={() => onTagClick?.(tag.tag)}
@@ -41,12 +42,19 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, onTagClick }) => {
                         </span>
                     )}
                 </div>
-                <button onClick={(e) => {handleToggleModal(e, room.id)}} className="bg-primary text-sm md:text-md flex items-center justify-center text-primary-foreground py-3 rounded-xl mt-auto w-full hover:bg-primary/90 transition-colors">
+                <button
+                    onClick={handleToggleModal}
+                    className="bg-primary text-sm md:text-md flex items-center justify-center text-primary-foreground py-3 rounded-xl mt-auto w-full hover:bg-primary/90 transition-colors"
+                >
                     Book Now
                 </button>
             </div>
-            {modalOpen && <BookingModal />}
-
+            {modalOpen && (
+                <BookingModal
+                    room={room}
+                    handleToggleModal={handleToggleModal}
+                />
+            )}
         </div>
     );
 };
