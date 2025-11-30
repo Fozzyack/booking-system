@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('auth-api/', include("rest_framework.urls", namespace="rest_framework")),
     path("", include("rooms.urls")),
     path("", include("bookings.urls")),
 ]
