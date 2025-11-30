@@ -40,7 +40,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="bg-slate-100 min-h-screen">
+        <div className="min-h-screen">
             <Header />
             <div className="px-4 md:px-32 lg:px-64 py-10">
                 <div className="space-y-2">
