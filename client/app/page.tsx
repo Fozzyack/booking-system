@@ -27,8 +27,8 @@ export default function Home() {
                 const res = await fetch(
                     `${API_BASE_URL}${API_ENDPOINTS.rooms}`,
                 );
-                if(!res.ok) {
-                    throw new Error("Could not get rooms")
+                if (!res.ok) {
+                    throw new Error("Could not get rooms");
                 }
                 const data = await res.json();
                 setRooms(data);
