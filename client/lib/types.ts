@@ -4,11 +4,21 @@ import { SetStateAction } from "react";
 export interface Room {
     id: number;
     name: string;
+    excerpt: string;
     description: string;
     image: string;
+    capacity: number;
     created_at: string;
     updated_at: string;
+    good_for: string;
     tags: TagItem[];
+    room_type?: RoomType;
+}
+
+export interface RoomType {
+    id: number;
+    type: string;
+    room: number;
 }
 
 export interface TagItem {
@@ -69,4 +79,3 @@ export interface SpacesAvailableProps {
     rooms: Room[];
     searchTerm: string;
 }
-

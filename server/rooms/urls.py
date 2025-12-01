@@ -5,6 +5,7 @@ from . import views
 router = DefaultRouter()
 router.register(r"rooms", viewset=views.RoomViewSet, basename="room")
 router.register(r"tags", viewset=views.TagViewSet, basename="tag")
+router.register(r"room-types", viewset=views.RoomTypeViewSet, basename="room_type")
 
 urlpatterns = [
         path("", include(router.urls)),

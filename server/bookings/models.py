@@ -3,10 +3,12 @@ from rooms.models import Rooms
 
 # Create your models here.
 
+
 class Status(models.TextChoices):
     PENDING = "P", "Pending"
     APPROVED = "A", "Approved"
     CANCELLED = "C", "Cancelled"
+
 
 class Bookings(models.Model):
 
@@ -16,7 +18,8 @@ class Bookings(models.Model):
     start_datetime = models.DateTimeField()
     end_datetime = models.DateTimeField()
     cancel_reason = models.TextField(blank=True, null=True)
-    status = models.CharField(max_length=1, choices=Status.choices, default=Status.PENDING)
+    status = models.CharField(
+        max_length=1, choices=Status.choices, default=Status.PENDING)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

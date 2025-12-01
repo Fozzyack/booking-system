@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 const navItems = [
     { label: "Features", href: "#features" },
@@ -22,7 +23,7 @@ export const Header: React.FC = () => {
 
     return (
         <header
-            className={`sticky md:px-32 lg:px-64 right-0 top-0 bg-white z-50 transition-all duration-300 w-full ${
+            className={`sticky md:px-32 lg:px-64 right-0 top-0 bg-white z-50 transition-all duration-300 text-primary w-full ${
                 isScrolled || isMobileMenuOpen
                     ? "bg-white/80 backdrop-blur-md shadow-sm"
                     : "bg-transparent"
@@ -30,15 +31,14 @@ export const Header: React.FC = () => {
         >
             <div className="">
                 <div className="flex items-center justify-between h-20">
-                    {/* Logo */}
-                    <div className="shrink-0 flex items-center gap-2">
+                    <Link href="/" className="shrink-0 flex items-center gap-2 p-4 rounded-lg hover:-translate-y-1 hover:text-white hover:bg-primary transition-all ease-in-out">
                         <div className="w-8 h-8 rounded-lg bg-bloom-orbit flex items-center justify-center text-white">
                             <Sparkles size={18} fill="currentColor" />
                         </div>
-                        <span className="font-bold text-xl tracking-tight text-primary">
+                        <span className="font-bold text-xl tracking-tight">
                             Bloom
                         </span>
-                    </div>
+                    </Link>
 
                     <nav className="hidden md:flex gap-8 items-end">
                         {navItems.map((item) => (

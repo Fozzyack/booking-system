@@ -39,17 +39,16 @@ export default function Home() {
         fetchRooms();
     }, []);
 
+    console.log(rooms);
+
     return (
         <div className="min-h-screen">
-            <Header />
-            <div className="px-4 md:px-32 lg:px-64 py-10">
+            <div>
                 <div className="space-y-2">
                     <h5 className="text-bloom-orbit text-xs uppercase font-bold">
                         Find Your Space
                     </h5>
-                    <h1 className="text-primary text-4xl font-semibold">
-                        Find Your Perfect Spot.
-                    </h1>
+                    <h1 className="">Find Your Perfect Spot.</h1>
                     <p className="text-sm">
                         Access premium workspaces, studios and event halls
                         across our areas. Instant booking, no contracts.

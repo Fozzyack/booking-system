@@ -34,6 +34,13 @@
 } 
 */
 
+@layer utilities {
+    h1 {
+        @apply text-primary text-4xl font-semibold
+    }
+}
+
+
 body {
     color: var(--foreground);
     font-family: montserrat, Helvetica, sans-serif;

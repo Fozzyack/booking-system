@@ -6,9 +6,9 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import status
 
-from .models import TagItem
+from .models import TagItem, RoomType
 from .models import Rooms
-from .serializer import RoomSerializer, TagItemSerializer
+from .serializer import RoomSerializer, TagItemSerializer, RoomTypeSerializer
 
 # Create your views here.
 
@@ -36,4 +36,9 @@ class RoomViewSet(viewsets.ModelViewSet):
 class TagViewSet(viewsets.ModelViewSet):
     queryset = TagItem.objects.all()
     serializer_class = TagItemSerializer
+
+
+class RoomTypeViewSet(viewsets.ModelViewSet):
+    queryset = RoomType.objects.all()
+    serializer_class = RoomTypeSerializer
 
