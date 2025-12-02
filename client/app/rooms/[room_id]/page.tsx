@@ -1,6 +1,7 @@
 import { API_BASE_URL, API_ENDPOINTS } from "@/lib/constants";
 import { Room } from "@/lib/types";
 import Image from "next/image";
+import TagsList from "@/components/TagsList";
 
 const RoomPage = async ({
     params,
@@ -80,12 +81,7 @@ const RoomPage = async ({
                             <p>{room.description}</p>
                         </div>
                     </div>
-                    <div>
-                        <h3 className="font-bold text-lg">
-                            {" "}
-                            What this Room Offers
-                        </h3>
-                    </div>
+                    <TagsList tags={room.tags} />
                 </div>
             </div>
         </div>
