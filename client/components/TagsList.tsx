@@ -17,6 +17,8 @@ import {
     Cable,
     CircleParking,
     Accessibility,
+    Dog,
+    Presentation,
     LucideIcon,
 } from "lucide-react";
 
@@ -26,25 +28,48 @@ interface TagsListProps {
 
 // Map tag names to their corresponding Lucide icons
 const tagIconMap: Record<string, LucideIcon> = {
+    // Wifi related
     wifi: Wifi,
     "wi-fi": Wifi,
+    "high-speed wifi": Wifi,
     internet: Wifi,
+    // Monitors
     monitor: Monitor,
+    "dual monitors": Monitor,
     screen: Monitor,
     display: Monitor,
+    // Meeting/Collaboration
+    "meeting rooms": Users,
+    "meeting room": Users,
+    meetings: Users,
+    // Whiteboard
+    whiteboard: Presentation,
+    board: Presentation,
+    // Quiet/Focus
+    "quiet zones": DoorOpen,
+    "quiet zone": DoorOpen,
+    quiet: DoorOpen,
+    // Pet Friendly
+    "pet friendly": Dog,
+    pets: Dog,
+    dog: Dog,
+    dogs: Dog,
+    // Coffee/Refreshments
     coffee: Coffee,
     beverage: Coffee,
     refreshments: Coffee,
+    // Printing
     printer: Printer,
     printing: Printer,
+    // Video/Camera
     video: Video,
     camera: Video,
     "video conferencing": Video,
     "video conference": Video,
-    whiteboard: Users,
-    board: Users,
+    // Projector/Presentation
     projector: Projector,
     presentation: Projector,
+    // Audio
     microphone: Mic,
     mic: Mic,
     audio: Mic,
@@ -52,27 +77,35 @@ const tagIconMap: Record<string, LucideIcon> = {
     speakers: Speaker,
     sound: Speaker,
     headphones: Headphones,
+    // HVAC
     "air conditioning": AirVent,
     ac: AirVent,
     "air-conditioning": AirVent,
     hvac: AirVent,
+    // Lighting
     lighting: Lightbulb,
     lights: Lightbulb,
     "natural light": Lightbulb,
+    // Entrance
     "private entrance": DoorOpen,
     entrance: DoorOpen,
     "accessible entrance": DoorOpen,
+    // Kitchen
     kitchen: WashingMachine,
     kitchenette: WashingMachine,
+    // Workstation
     laptop: Laptop,
     computer: Laptop,
     workstation: Laptop,
+    // Cables
     cables: Cable,
     "hdmi cables": Cable,
     adapters: Cable,
+    // Parking
     parking: CircleParking,
     "parking space": CircleParking,
     "accessible parking": CircleParking,
+    // Accessibility
     accessibility: Accessibility,
     accessible: Accessibility,
     "wheelchair accessible": Accessibility,

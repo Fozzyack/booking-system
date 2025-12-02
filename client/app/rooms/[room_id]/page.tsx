@@ -15,6 +15,7 @@ const RoomPage = async ({
         excerpt: "",
         description: "",
         image: "",
+        good_for: "",
         capacity: 0,
         created_at: "",
         updated_at: "",
