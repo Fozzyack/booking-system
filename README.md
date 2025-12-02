@@ -2,7 +2,10 @@
 
 A modern, full-stack booking system for coworking spaces, built with Next.js and Django REST Framework.
 
-> **Note**: This is a test project created to explore and experiment with various technologies. It is not a production-ready application.
+> [!IMPORTANT]
+> This is a test project created to explore and experiment with various technologies. It is not a production-ready application.
+
+![Current Frontpage](./assets/RoomCards.png)
 
 ## Features
 
