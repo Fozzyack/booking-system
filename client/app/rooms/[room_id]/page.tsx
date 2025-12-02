@@ -75,7 +75,7 @@ const RoomPage = async ({
                                     About This Room{" "}
                                 </h3>
                                 <p className="px-2 py-1 mb-2 rounded-full text-bloom-orbit/50 font-bold bg-bloom-orbit/5 border border-bloom-orbit/20 text-xs inline-block">
-                                    Good for : {room.good_for}
+                                    {room.good_for}
                                 </p>
                             </div>
                             <p>{room.description}</p>
