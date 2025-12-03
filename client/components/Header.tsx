@@ -5,8 +5,9 @@ import Link from "next/link";
 
 const navItems = [
     { label: "Features", href: "#features" },
-    { label: "Mentors", href: "#mentors" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Spaces", href: "#spaces" },
+    { label: "About", href: "#about" },
 ];
 
 export const Header: React.FC = () => {
