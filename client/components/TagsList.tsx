@@ -133,7 +133,7 @@ const TagsList = ({ tags }: TagsListProps) => {
                     return (
                         <div
                             key={index}
-                            className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors"
+                            className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-200 transition-colors"
                         >
                             <Icon className="w-6 h-6 text-bloom-orbit" />
                             <span className="text-slate-700 capitalize">
