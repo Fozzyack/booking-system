@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Search, Filter, Calendar, MapPin, Zap, Users } from "lucide-react";
+import CallToAction from "@/components/CallToAction";
 
 const Features = () => {
     const features = [
@@ -84,21 +85,12 @@ const Features = () => {
                     })}
                 </div>
 
-                {/* CTA Section */}
-                <div className="bg-gradient-to-r from-bloom-orbit/5 to-bloom-blue/5 rounded-2xl p-12 text-center space-y-4">
-                    <h2 className="text-3xl font-bold">
-                        Ready to find your perfect space?
-                    </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Browse our collection of premium workspaces and book instantly. No contracts, no hassle—just great spaces.
-                    </p>
-                    <a
-                        href="/"
-                        className="inline-block rounded-xl px-6 py-3 bg-bloom-orbit text-white hover:bg-bloom-orbit/90 transition-all duration-300 font-medium"
-                    >
-                        Browse Spaces
-                    </a>
-                </div>
+                <CallToAction
+                    title="Ready to find your perfect space?"
+                    description="Browse our collection of premium workspaces and book instantly. No contracts, no hassle—just great spaces."
+                    buttonText="Browse Spaces"
+                    buttonHref="/"
+                />
             </div>
         </div>
     );

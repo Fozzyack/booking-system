@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Search, Filter, Calendar, CheckCircle, ArrowRight } from "lucide-react";
+import CallToAction from "@/components/CallToAction";
 
 const HowItWorks = () => {
     const steps = [
@@ -194,22 +195,13 @@ const HowItWorks = () => {
                     </div>
                 </div>
 
-                {/* CTA Section */}
-                <div className="bg-gradient-to-r from-bloom-orbit/5 to-bloom-blue/5 rounded-2xl p-12 text-center space-y-4">
-                    <h2 className="text-3xl font-bold">
-                        Ready to get started?
-                    </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Browse our spaces now and find your perfect workspace in minutes.
-                    </p>
-                    <a
-                        href="/"
-                        className="inline-flex items-center gap-2 rounded-xl px-6 py-3 bg-bloom-orbit text-white hover:bg-bloom-orbit/90 transition-all duration-300 font-medium"
-                    >
-                        Browse Spaces
-                        <ArrowRight size={18} />
-                    </a>
-                </div>
+                <CallToAction
+                    title="Ready to get started?"
+                    description="Browse our spaces now and find your perfect workspace in minutes."
+                    buttonText="Browse Spaces"
+                    buttonHref="/"
+                    showIcon={true}
+                />
             </div>
         </div>
     );
