@@ -240,7 +240,7 @@ const About = () => {
                                 issues, or suggest features.
                             </p>
                             <a
-                                href="https://github.com/sst/opencode"
+                                href="https://github.com/Fozzyack/booking-system-test"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block text-bloom-orbit font-medium hover:underline"
