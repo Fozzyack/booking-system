@@ -1,5 +1,6 @@
 // API Constants
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+
 export const API_ENDPOINTS = {
   rooms: '/rooms/',
   tags: '/tags/',
@@ -49,3 +50,18 @@ export const LOADING_MESSAGES = {
   UPDATING_ROOM: 'Updating room...',
   DELETING_ROOM: 'Deleting room...',
 } as const;
+
+export const MONTHS = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];

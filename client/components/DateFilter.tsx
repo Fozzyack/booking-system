@@ -3,25 +3,12 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight, Calendar, X } from "lucide-react";
 import { DateFilterProps } from "@/lib/types";
+import { MONTHS } from "@/lib/constants"; 
 
 const DateFilter: React.FC<DateFilterProps> = ({ date, setDate }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentMonth, setCurrentMonth] = useState(new Date());
 
-    const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-    ];
 
     const handleClear = () => {
         setDate(undefined);
@@ -144,7 +131,7 @@ const DateFilter: React.FC<DateFilterProps> = ({ date, setDate }) => {
                                     <ChevronLeft className="w-4 h-4" />
                                 </button>
                                 <h4 className="text-md font-medium">
-                                    {months[currentMonth.getMonth()]}{" "}
+                                    {MONTHS[currentMonth.getMonth()]}{" "}
                                     {currentMonth.getFullYear()}
                                 </h4>
                                 <button
