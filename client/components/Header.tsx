@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
         >
             <div className="">
                 <div className="flex items-center justify-between h-20">
-                    <Link href="/" className="shrink-0 flex items-center gap-2 p-4 rounded-lg hover:-translate-y-1 hover:text-white hover:bg-primary transition-all ease-in-out">
+                    <Link href="/" className="shrink-0 flex items-center gap-2 p-4 rounded-full hover:-translate-y-0.5 hover:bg-slate-200/40 transition-all ease-in-out">
                         <div className="w-8 h-8 rounded-lg bg-bloom-orbit flex items-center justify-center text-white">
                             <Sparkles size={18} fill="currentColor" />
                         </div>
