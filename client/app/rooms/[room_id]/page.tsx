@@ -50,7 +50,7 @@ const RoomPage = async ({
         <div>
             <h1>{room.name}</h1>
             <div className="md:grid md:grid-cols-12 gap-4 my-12">
-                <div className="md:col-span-7 lg:col-span-9 space-y-12">
+                <div className="md:col-span-7 lg:col-span-8 space-y-12 gap-4">
                     {imageUrl && (
                         <Image
                             src={imageUrl}
@@ -58,7 +58,7 @@ const RoomPage = async ({
                             height={500}
                             width={800}
                             unoptimized={true}
-                            className="rounded-2xl h-[500px] w-[900px] object-cover"
+                            className="rounded-2xl w-full h-[500px] object-cover"
                         />
                     )}
                     <div className="flex flex-col justify-center">
@@ -104,7 +104,7 @@ const RoomPage = async ({
                         </div>
                     </div>
                 </div>
-                <div className="md:col-span-5 lg:col-span-3">
+                <div className="flex items-center justify-center mt-10 md:mt-0 md:block md:col-span-5 lg:col-span-4">
                     <BookingDateFilter />
                 </div>
             </div>
