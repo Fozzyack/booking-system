@@ -27,7 +27,8 @@ class DayOfWeek(models.IntegerChoices):
 
 class RoomAvailability(models.Model):
     room = models.ForeignKey(
-        Rooms, on_delete=models.CASCADE, related_name="availability")
+        Rooms, on_delete=models.CASCADE, related_name="availability"
+    )
     day_of_week = models.IntegerField(choices=DayOfWeek.choices)
     start_time = models.TimeField()
     end_time = models.TimeField()
@@ -40,13 +41,13 @@ class RoomAvailability(models.Model):
 class RoomType(models.Model):
     type = models.CharField(max_length=20)
     room = models.OneToOneField(
-        Rooms, on_delete=models.CASCADE, related_name="room_type")
+        Rooms, on_delete=models.CASCADE, related_name="room_type"
+    )
 
 
 class TagItem(models.Model):
     tag = models.CharField(max_length=20)
-    room = models.ForeignKey(
-        Rooms, on_delete=models.CASCADE, related_name='tags')
+    room = models.ForeignKey(Rooms, on_delete=models.CASCADE, related_name="tags")
 
     def __str__(self):
         return self.tag
