@@ -107,7 +107,7 @@ const LoginPage = () => {
                         Login
                     </button>
                     <div className="w-full flex flex-col items-center justify-center text-center">
-                        <p>Dont have an account?</p>
+                        <p>Don't have an account?</p>
                         <Link href="/sign-up" className="text-bloom-orbit">
                             {" "}
                             Create an Account{" "}
