@@ -27,15 +27,16 @@ const LoginPage = () => {
 
     return (
         <div className="w-full h-screen">
-            <form className="grid grid-cols-12 h-full">
-                <Image
-                    src="/assets/images/login_image.jpg"
-                    alt="The Space Space"
-                    height={500}
-                    width={500}
-                    className="object-cover h-full w-full rounded-r-[2em] col-span-7"
-                />
-                <div className="flex flex-col items-start justify-center col-span-5 px-24 gap-4">
+            <form className="grid grid-cols-12 h-screen">
+                <div className="hidden md:block relative md:col-span-7 lg:col-span-8">
+                    <Image
+                        src="/assets/images/login_image.jpg"
+                        alt="The Space Space"
+                        fill
+                        className="object-cover rounded-r-[2em]"
+                    />
+                </div>
+                <div className="flex flex-col items-start justify-center col-span-12 md:col-span-5 lg:col-span-4 px-6 lg:px-10 gap-4 xl:px-24">
                     <div>
                         <h3>Welcome Back</h3>
                         <p>Enter your credentials to access your account. </p>
