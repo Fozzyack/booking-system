@@ -76,7 +76,7 @@ const LoginPage = () => {
                         >
                             <Lock className="text-slate-400 group-focus-within:text-bloom-orbit transition-all ease-in-out duration-150" />
                             <input
-                                type={showPassword ? "password" : "text"}
+                                type={showPassword ? "text": "password"}
                                 id="password"
                                 value={password}
                                 onChange={handleChangePassword}
@@ -88,7 +88,7 @@ const LoginPage = () => {
                                 className="p-2 text-slate-400 group-focus-within:text-bloom-orbit transition-all"
                                 type="button"
                             >
-                                {showPassword ? <EyeOff /> : <Eye />}
+                                {showPassword ?  <Eye /> : <EyeOff />}
                             </button>
                         </div>
                     </div>
