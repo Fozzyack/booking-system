@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
 
     return (
         <header
-            className={`sticky md:px-32 lg:px-64 right-0 top-0 bg-white z-50 transition-all duration-300 text-primary w-full ${
+            className={`sticky md:px-16 lg:px-28 xl:px-64 right-0 top-0 bg-white z-50 transition-all duration-300 text-primary w-full ${
                 isScrolled || isMobileMenuOpen
                     ? "bg-white/80 backdrop-blur-md shadow-sm"
                     : "bg-transparent"
@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
                         </span>
                     </Link>
 
-                    <nav className="hidden md:flex gap-8 items-end">
+                    <nav className="hidden md:flex gap-4 items-end">
                         {navItems.map((item) => (
                             <a
                                 key={item.label}
@@ -60,16 +60,16 @@ export const Header: React.FC = () => {
                         >
                             Find Booking
                         </a>
-                        <a
-                            href="#"
+                        <Link
+                            href="/login"
                             className=" rounded-xl px-3 py-2 border border-primary bg-slate-200 hover:bg-bloom-yellow transition-all duration-300 ease-in-out"
                         >
                             Login
-                        </a>
+                        </Link>
                     </div>
 
                     <button
-                        className="md:hidden p-2 text-primary"
+                        className="md:hidden p-3 text-primary"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         {isMobileMenuOpen ? <X /> : <Menu />}
@@ -94,9 +94,11 @@ export const Header: React.FC = () => {
                             <button className="w-full py-4 bg-bloom-blue border border-black rounded-xl">
                                 Find My Booking
                             </button>
-                            <button className="w-full py-4 bg-bloom-yellow border border-black rounded-xl">
-                                Log in
-                            </button>
+                            <Link 
+                            href="/login"
+                            className="text-center w-full py-4 bg-bloom-yellow border border-black rounded-xl">
+                                Login
+                            </Link>
                         </div>
                     </div>
                 </div>
