@@ -163,6 +163,7 @@ http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="P
 http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="Video Conference" room:=5
 
 # Room 6: The Milky Way - Creative collaboration space
+http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="SpaceShip Access" room:=6
 http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="High-Speed Wifi" room:=6
 http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="Whiteboard" room:=6
 http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="Natural Light" room:=6
@@ -180,6 +181,7 @@ http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="W
 http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="Ergonomic Seating" room:=8
 
 # Room 9: Large Dog Park I - Focus room
+http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="Large Dogs" room:=9
 http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="Quiet Zones" room:=9
 http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="Ergonomic Seating" room:=9
 http --ignore-stdin POST :8000/tags/ "Authorization:Bearer $ACCESS_TOKEN" tag="Natural Light" room:=9
