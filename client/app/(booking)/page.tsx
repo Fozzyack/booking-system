@@ -58,7 +58,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="min-h-screen">
+        <div className="h-full">
             <div>
                 <div className="space-y-2">
                     <h5 className="text-bloom-orbit text-xs uppercase font-bold">

@@ -54,12 +54,12 @@ export const Header: React.FC = () => {
                     </nav>
 
                     <div className="hidden md:flex gap-4 text-sm">
-                        <a
-                            href="#"
+                        <Link
+                            href="/find-my-booking"
                             className=" rounded-xl px-3 py-2 border border-primary bg-bloom-blue hover:bg-bloom-blue-light transition-all duration-300 ease-in-out"
                         >
                             Find Booking
-                        </a>
+                        </Link>
                         <Link
                             href="/login"
                             className=" rounded-xl px-3 py-2 border border-primary bg-slate-200 hover:bg-bloom-yellow transition-all duration-300 ease-in-out"
@@ -91,9 +91,9 @@ export const Header: React.FC = () => {
                             </a>
                         ))}
                         <div className="pt-4 border-t border-bloom-gray flex flex-col justify-start gap-3">
-                            <button className="w-full py-4 bg-bloom-blue border border-black rounded-xl">
+                            <Link href="/find-my-booking" className="w-full py-4 bg-bloom-blue border border-black rounded-xl">
                                 Find My Booking
-                            </button>
+                            </Link>
                             <Link 
                             href="/login"
                             className="text-center w-full py-4 bg-bloom-yellow border border-black rounded-xl">
