@@ -3,6 +3,11 @@ from django.contrib.auth.password_validation import validate_password
 from .models import CustomUser
 
 
+"""
+Just added some sample serializers for now.
+Might add or remove later
+"""
+
 class CustomUserSerializer(serializers.ModelSerializer):
     """Serializer for viewing user details"""
 
