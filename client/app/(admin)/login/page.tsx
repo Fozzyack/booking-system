@@ -1,5 +1,6 @@
 "use client";
 
+import { API_BASE_URL, API_ENDPOINTS } from "@/lib/constants";
 import { LogIn, Lock, Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,9 +26,35 @@ const LoginPage = () => {
         setShowPassword((prev) => !prev);
     };
 
+    const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            const res = await fetch(`${API_BASE_URL}${API_ENDPOINTS.login}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email,
+                    password,
+                }),
+            });
+            if (!res.ok) {
+                const error = await res.text();
+                console.error(error);
+                throw new Error(error);
+            }
+            const data = await res.json();
+            console.log(data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <div className="w-full h-screen">
-            <form className="grid grid-cols-12 h-screen">
+            <form
+                onSubmit={handleSubmitLogin}
+                className="grid grid-cols-12 h-screen"
+            >
                 <div className="hidden md:block relative md:col-span-7 lg:col-span-8">
                     <Image
                         src="/assets/images/login_image_resize.png"
@@ -56,6 +83,7 @@ const LoginPage = () => {
                             <input
                                 type="email"
                                 id="login"
+                                required
                                 value={email}
                                 onChange={handleChangeEmail}
                                 ref={emailRef}
@@ -76,8 +104,9 @@ const LoginPage = () => {
                         >
                             <Lock className="text-slate-400 group-focus-within:text-bloom-orbit transition-all ease-in-out duration-150" />
                             <input
-                                type={showPassword ? "text": "password"}
+                                type={showPassword ? "text" : "password"}
                                 id="password"
+                                required
                                 value={password}
                                 onChange={handleChangePassword}
                                 ref={passwordRef}
@@ -88,7 +117,7 @@ const LoginPage = () => {
                                 className="p-2 text-slate-400 group-focus-within:text-bloom-orbit transition-all"
                                 type="button"
                             >
-                                {showPassword ?  <Eye /> : <EyeOff />}
+                                {showPassword ? <Eye /> : <EyeOff />}
                             </button>
                         </div>
                     </div>

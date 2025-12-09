@@ -3,7 +3,7 @@
 # Create rooms with images from testimages folder
 
 echo "Authenticating as admin and obtaining JWT token..."
-TOKEN_RESPONSE=$(http --print=b POST :8000/token/ username=admin password=admin 2>/dev/null)
+TOKEN_RESPONSE=$(http --print=b POST :8000/login/ email=admin@example.com password=admin 2>/dev/null)
 
 # Use jq if available, otherwise use grep/sed
 if command -v jq &> /dev/null; then

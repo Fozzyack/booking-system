@@ -13,14 +13,14 @@ poetry run python manage.py makemigrations rooms
 poetry run python manage.py migrate
 
 # Create superuser non-interactively
-echo "Creating superuser (username: admin, password: admin)..."
+echo "Creating superuser (email: admin@example.com, password: admin)..."
 DJANGO_SUPERUSER_PASSWORD=admin poetry run python manage.py createsuperuser \
   --noinput \
-  --username admin \
-  --email admin@example.com
+  --email admin@example.com \
+  --username admin
 
 echo "Database reset complete!"
-echo "Superuser credentials: admin / admin"
+echo "Superuser credentials: admin@example.com / admin"
 poetry run python manage.py runserver &
 SERVER_PID=$!
 

@@ -4,6 +4,8 @@ export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost
 export const API_ENDPOINTS = {
   rooms: '/rooms/',
   tags: '/tags/',
+  login: '/login/',
+  refresh: '/login/refresh/',
 } as const;
 
 // UI Constants
