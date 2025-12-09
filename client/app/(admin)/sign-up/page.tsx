@@ -147,8 +147,14 @@ const LoginPage = () => {
                             </button>
                         </div>
                     </div>
-                    <p className={`${doPasswordsMatch === "match" ? "text-green-500": doPasswordsMatch === "no match" ? "text-red-500" : "h-0" } transition-all ease-in-out duration-300`}>
-                        { doPasswordsMatch === "match" ? "Passwords Match" : doPasswordsMatch === "no match" ? "Passwords do not match" : ""}
+                    <p
+                        className={`${doPasswordsMatch === "match" ? "text-green-500" : doPasswordsMatch === "no match" ? "text-red-500" : "h-0"} transition-all ease-in-out duration-300`}
+                    >
+                        {doPasswordsMatch === "match"
+                            ? "Passwords Match"
+                            : doPasswordsMatch === "no match"
+                              ? "Passwords do not match"
+                              : ""}
                     </p>
                     <button
                         type="submit"
@@ -169,7 +175,7 @@ const LoginPage = () => {
                         src="/assets/images/create_account_page.jpg"
                         alt="The Space Space"
                         fill
-                        className="object-cover rounded-r-[2em]"
+                        className="object-cover rounded-l-[2em]"
                     />
                 </div>
             </form>

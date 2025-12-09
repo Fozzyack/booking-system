@@ -9,7 +9,7 @@ const navItems = [
     { label: "About", href: "/about" },
 ];
 
-export const Header: React.FC = () => {
+export const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -107,4 +107,4 @@ export const Header: React.FC = () => {
     );
 };
 
-export default Header;
+export default Navbar;
