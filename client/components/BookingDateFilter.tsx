@@ -45,14 +45,14 @@ const BookingDateFilter: React.FC<BookingDateFilterProps> = ({currentDate, setCu
         for (let day = 1; day <= daysInMonth; day++) {
             const isSelected =
                 selectedDate &&
-                selectedDate.getDate() == day &&
-                selectedDate.getMonth() == currentDate.getMonth() &&
-                selectedDate.getFullYear() == currentDate.getFullYear();
+                selectedDate.getDate() === day &&
+                selectedDate.getMonth() === currentDate.getMonth() &&
+                selectedDate.getFullYear() === currentDate.getFullYear();
 
             const isToday =
-                new Date().getDate() == day &&
-                new Date().getMonth() == currentDate.getMonth() &&
-                new Date().getFullYear() == currentDate.getFullYear();
+                new Date().getDate() === day &&
+                new Date().getMonth() === currentDate.getMonth() &&
+                new Date().getFullYear() === currentDate.getFullYear();
 
             days.push(
                 <button

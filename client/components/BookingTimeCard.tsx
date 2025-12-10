@@ -20,14 +20,14 @@ const BookingTimeComponent: React.FC<BookingTimeComponentType> = ({
         // Starting hour * 2 and ending hour * 2
         for (let i = startTime_24hour * 2; i < endTime_24hour * 2; i++) {
             const hour = Math.floor(i / 2).toString();
-            const minutes = i % 2 == 0 ? ":00" : ":30";
+            const minutes = i % 2 === 0 ? ":00" : ":30";
             const total_time = hour + minutes;
 
             times.push(
                 <button
                     key={i}
                     onClick={() => setSelectedTime(total_time)}
-                    className={`py-1 px-1 text-sm rounded-lg border border-slate-200 hover:-translate-y-0.5 transition-all duration-150 ease-in-out  ${selectedTime == total_time ? "bg-primary text-white hover:bg-primary/80" : "bg-white hover:bg-slate-100"} transition-all ease-in-out duration-300`}
+                    className={`py-1 px-1 text-sm rounded-lg border border-slate-200 hover:-translate-y-0.5 transition-all duration-150 ease-in-out  ${selectedTime === total_time ? "bg-primary text-white hover:bg-primary/80" : "bg-white hover:bg-slate-100"} transition-all ease-in-out duration-300`}
                 >
                     {total_time}
                 </button>,
