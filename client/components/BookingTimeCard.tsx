@@ -1,26 +1,34 @@
 "use client";
 
-import { useState } from "react";
-
 interface BookingTimeComponentType {
-    startTime_24hour: number
-    endTime_24hour: number
-};
+    startTime_24hour: number;
+    endTime_24hour: number;
+    selectedTime: string;
+    setSelectedTime: (value: string) => void;
+}
 
-const BookingTimeComponent: React.FC<BookingTimeComponentType> = ({startTime_24hour, endTime_24hour}) => {
-    const [selectedTime, setSelectedTime] = useState<string>("");
+const BookingTimeComponent: React.FC<BookingTimeComponentType> = ({
+    selectedTime,
+    setSelectedTime,
+    startTime_24hour,
+    endTime_24hour,
+}) => {
     const timeConstruction = () => {
         // Note: this needs to take in a start_time and end_time (when it is available)
         const times = [];
         // This should run between start_time and end_time
-        // Starting hour * 2 and ending hour * 2 
+        // Starting hour * 2 and ending hour * 2
         for (let i = startTime_24hour * 2; i < endTime_24hour * 2; i++) {
             const hour = Math.floor(i / 2).toString();
             const minutes = i % 2 == 0 ? ":00" : ":30";
             const total_time = hour + minutes;
 
             times.push(
-                <button key={i} onClick={() => setSelectedTime(total_time)} className={`py-4 px-1 text-sm rounded-lg border border-slate-200 hover:-translate-y-0.5 transition-all duration-150 ease-in-out  ${selectedTime == total_time ? "bg-primary text-white hover:bg-primary/80" : "bg-white hover:bg-slate-100"} transition-all ease-in-out duration-300`}>
+                <button
+                    key={i}
+                    onClick={() => setSelectedTime(total_time)}
+                    className={`py-2 px-1 text-sm rounded-lg border border-slate-200 hover:-translate-y-0.5 transition-all duration-150 ease-in-out  ${selectedTime == total_time ? "bg-primary text-white hover:bg-primary/80" : "bg-white hover:bg-slate-100"} transition-all ease-in-out duration-300`}
+                >
                     {total_time}
                 </button>,
             );

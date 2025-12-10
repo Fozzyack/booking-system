@@ -54,7 +54,7 @@ const BookingDateFilter = () => {
                 <button
                     key={`day-button-${day}`}
                     onClick={() => handleSelectDate(day)}
-                    className={`p-2 border rounded-lg ${isToday ? "border-primary" : "border-white"} ${isSelected ? "bg-primary text-primary-foreground hover:bg-primary/80" : "hover:bg-slate-100"} transition-all duration-150 `}
+                    className={`p-1 border rounded-lg ${isToday ? "border-primary" : "border-white"} ${isSelected ? "bg-primary text-primary-foreground hover:bg-primary/80" : "hover:bg-slate-100"} transition-all duration-150 `}
                 >
                     {day}
                 </button>,

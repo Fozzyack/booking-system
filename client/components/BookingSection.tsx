@@ -1,0 +1,22 @@
+"use client";
+
+import BookingDateFilter from "./BookingDateFilter";
+import BookingTimeComponent from "./BookingTimeCard";
+import { useState } from "react";
+
+const BookingSection = () => {
+    const [selectedTime, setSelectedTime] = useState<string>("");
+    return (
+        <div className="px-4 md:p-0 space-y-8 sticky left-0 top-30 ">
+            <BookingDateFilter />
+            <BookingTimeComponent
+                selectedTime={selectedTime}
+                setSelectedTime={setSelectedTime}
+                startTime_24hour={8}
+                endTime_24hour={19}
+            />
+        </div>
+    );
+};
+
+export default BookingSection;

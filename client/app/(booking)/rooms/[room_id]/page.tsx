@@ -3,8 +3,7 @@ import { Room } from "@/lib/types";
 import Image from "next/image";
 import TagsList from "@/components/TagsList";
 import { LocateIcon } from "lucide-react";
-import BookingDateFilter from "@/components/BookingDateFilter";
-import BookingTimeComponent from "@/components/BookingTimeCard";
+import BookingSection from "@/components/BookingSection";
 
 const RoomPage = async ({
     params,
@@ -103,11 +102,10 @@ const RoomPage = async ({
                         </div>
                     </div>
                 </div>
+
+                {/* The booking section thats on the righthand side - needs to be a client component */}
                 <div className="flex items-center justify-center mt-10 md:mt-0 md:block md:col-span-5 lg:col-span-4">
-                    <div className="px-4 md:p-0 space-y-8 sticky left-0 top-30 ">
-                        <BookingDateFilter />
-                        <BookingTimeComponent startTime_24hour={8} endTime_24hour={19}/>
-                    </div>
+                    <BookingSection />
                 </div>
             </div>
         </div>
