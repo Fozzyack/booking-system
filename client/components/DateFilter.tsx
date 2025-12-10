@@ -1,7 +1,13 @@
 "use client";
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import { ChevronLeft, ChevronRight, Calendar, X } from "lucide-react";
+import {
+    ChevronLeft,
+    ChevronRight,
+    Calendar,
+    X,
+    TimerIcon,
+} from "lucide-react";
 import { DateFilterProps } from "@/lib/types";
 import { MONTHS } from "@/lib/constants";
 import { getDaysInMonth, getFirstDayOfMonth } from "@/utils/date-utils";
@@ -88,15 +94,21 @@ const DateFilter: React.FC<DateFilterProps> = ({ date, setDate }) => {
     return (
         <>
             <div className="relative">
-                <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="flex items-center gap-2 px-4 py-3 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors"
-                >
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm">
-                        {date ? formatDate(date) : "Select Date"}
-                    </span>
-                </button>
+                <div className="flex gap-2">
+                    <div className="flex gap-2 items-center justify-start">
+                        <TimerIcon />
+                        <p> Availibility: </p>
+                    </div>
+                    <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="flex items-center gap-2 px-4 py-3 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors"
+                    >
+                        <Calendar className="w-4 h-4" />
+                        <span className="text-sm">
+                            {date ? formatDate(date) : "Select Date"}
+                        </span>
+                    </button>
+                </div>
             </div>
 
             {isModalOpen &&
