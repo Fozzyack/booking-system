@@ -9,7 +9,7 @@ const BookingSection = () => {
     const [currentDate, setCurrentDate] = useState<Date>(new Date());
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
     return (
-        <div className="px-4 md:p-0 space-y-8 sticky left-0 top-30 ">
+        <div className="px-4 md:p-0 space-y-8 sticky left-0">
             <BookingDateFilter currentDate={currentDate} selectedDate={selectedDate} setCurrentDate={setCurrentDate} setSelectedDate={setSelectedDate}/>
             <BookingTimeComponent
                 selectedTime={selectedTime}

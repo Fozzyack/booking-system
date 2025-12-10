@@ -1,11 +1,7 @@
 "use client";
 
-interface BookingTimeComponentType {
-    startTime_24hour: number;
-    endTime_24hour: number;
-    selectedTime: string;
-    setSelectedTime: (value: string) => void;
-}
+import { BookingTimeComponentType } from "@/lib/types";
+
 
 const BookingTimeComponent: React.FC<BookingTimeComponentType> = ({
     selectedTime,
